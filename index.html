@@ -33,28 +33,22 @@
  
 
 	 
-function authenticate(){
-	
-	
-	console.log("inside");
-	
-	window.lpGetAuthenticationToken = function(callback) {
-		console.log("inside lpGetAuthenticationToken!");
-		var token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3NvbWV0aGluZy5pdCIsInN1YiI6IndoYXRzYXBwXzE0ODAzMDIxXzM5MzQyNTkyOTAxNSIsInByZWZlcnJlZF91c2VybmFtZSI6Ik1hcmlvIiwicGhvbmVfbnVtYmVyIjoiMzkzNDI1OTI5MDE1IiwiZ2l2ZW5fbmFtZSI6Ik1hcmlvIiwiZmFtaWx5X25hbWUiOiJSb3NzaSIsImxwX3NkZXMiOltdLCJpYXQiOjE2MDM0OTM0NjgsImV4cCI6MjIwMzQ5MzQ2OH0.dE6xFWXJjC82w6339g0BDAfqM89Dkjf0_rMPbSvofddp-HVN_qgSXUsgJiBAHwOrBv7dukV1lnZ87l_kSc21p-z1nUFGauXKgMfr21nmD4Lz76JkElK4A6mh0nODdWFauMmGPqL-8LxWFlVsdpFKyTE4hwNFSjpmnYf05C7HLuJV20nhiuNURQW_-u07vmHQcJGGd6TXpMg67tWSPs2hd94kkOdeauRT7y_gIsUHafgeyIWToTKvx7rXFuDLhlSNWoHHgZRP6FokAdT0cbFVnT-nXwFVDJO7PFvB0R15l0g5DIy_3ssgjzxlnEwJ9itOdw_cXNCfYios2fVy5foD2w";
-    callback(token);
-	};
-	
-
-
+function sendLocation(){
 	
 	setTimeout(function(){
 		console.log("inside2");
+		var CurrentLocation = window.location.href;
+		lpTag.newPage(CurrentLocation, {section: "cloudcare"});
+		/****
+		
 		lpTag.sdes.push({
 			"type": "ctmrinfo",
 			"info": {
 				customerId: '1'
 			}
 		});
+		
+		*****/
 	 
 		
 	}, 3000);
@@ -65,7 +59,7 @@ function authenticate(){
 	 
 	 
 $(document).ready(function() {
-	authenticate();
+	sendLocation();
 });
 	
 	 
