@@ -35,9 +35,16 @@
 function sendLocation(){
 	
 	setTimeout(function(){
-		console.log("inside2");
 		var CurrentLocation = window.location.href;
-		lpTag.newPage(CurrentLocation, {section: "cloudcare"});	
+		lpTag.newPage(CurrentLocation, {section: "cloudcare"});
+		
+		lpTag.sdes.push({
+			"type": "ctmrinfo",
+			"info": {
+				customerId: '1'
+			}
+		});
+		
 	}, 3000);
 	
 }
